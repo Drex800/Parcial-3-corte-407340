@@ -1,0 +1,62 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API ERP Agrícola",
+    "version": "1.0.0",
+    "description": "Documentación de la API para gestión de fincas y cultivos"
+  },
+  "servers": [
+    { "url": "http://localhost:3000", "description": "Servidor local" }
+  ],
+  "paths": {
+    "/api/farms": {
+      "get": {
+        "summary": "Obtener todas las fincas",
+        "responses": {
+          "200": {
+            "description": "Lista de fincas"
+          }
+        }
+      },
+      "post": {
+        "summary": "Crear una finca",
+        "responses": {
+          "201": {
+            "description": "Finca creada"
+          }
+        }
+      }
+    },
+    "/api/farms/{id}": {
+      "get": {
+        "summary": "Obtener finca por ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Finca encontrada" },
+          "404": { "description": "No encontrada" }
+        }
+      }
+    },
+    "/api/crops": {
+      "get": {
+        "summary": "Obtener todos los cultivos",
+        "responses": {
+          "200": { "description": "Lista de cultivos" }
+        }
+      },
+      "post": {
+        "summary": "Crear cultivo",
+        "responses": {
+          "201": { "description": "Cultivo creado" }
+        }
+      }
+    }
+  }
+}

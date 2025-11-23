@@ -2,12 +2,10 @@ import express from "express";
 import cors from "cors";
 import farmRoutes from "./routes/farms.routes";
 import cropRoutes from "./routes/crops.routes";
-import { setupSwagger } from "./swagger/swagger";
+
+
 
 const app = express();
-
-// Configuración de Swagger
-setupSwagger(app);
 
 // Middlewares
 app.use(cors({ origin: "http://localhost:5173" })); // Permitir peticiones desde el frontend
